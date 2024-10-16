@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../common/product';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-product-list',
@@ -11,7 +12,10 @@ export class ProductListComponent implements OnInit {
     // Properties can be accessed from view template
     products: Product[] = [];
 
-    constructor(private productService: ProductService) {}
+    constructor(
+        private productService: ProductService,
+        private router: Router
+    ) {}
 
     ngOnInit(): void {
         this.listProducts();

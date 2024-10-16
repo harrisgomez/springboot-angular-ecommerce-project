@@ -40,6 +40,8 @@
     color: #555;
     font-size: 16px;
     padding: 5px 0;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .navbar-sidebar .navbar-list li a i {
@@ -48,4 +50,8 @@
 
 .navbar-sidebar .navbar-list li a:hover {
     color: #0da8e4;
+}
+
+.active-link {
+    font-weight: bold;
 }

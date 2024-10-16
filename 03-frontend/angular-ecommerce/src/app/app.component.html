@@ -5,19 +5,20 @@
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar-list">
                     <li>
-                        <a href="#">Products</a>
+                        <a routerLink="/home" routerLinkActive="active-link">Products</a>
                     </li>
                     <li>
-                        <a href="#">Cart</a>
+                        <a routerLink="/checkout" routerLinkActive="active-link">Cart</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </aside>
 
-
-	<!-- MAIN CONTENT-->
+    <!-- MAIN CONTENT-->
     <div class="page-container">
-        <app-product-list></app-product-list>
+
+        <!-- router-link serves as a placeholder for the active route component -->
+        <router-outlet></router-outlet>
     </div>
 </div>
