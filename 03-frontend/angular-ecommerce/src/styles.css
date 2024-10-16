@@ -34,11 +34,6 @@ input {
     border: none;
 }
 
-button {
-    border: none;
-    background: 0 0;
-}
-
 img {
     max-width: 100%;
     /* height: auto; */
