@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ProductService } from '../../services/product.service';
+import { SharedService } from '../../services/shared.service';
+
 import { Product } from '../../common/product';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-product-list',
@@ -9,12 +11,13 @@ import { Router } from '@angular/router';
     styleUrl: './product-list.component.css',
 })
 export class ProductListComponent implements OnInit {
+
     // Properties can be accessed from view template
     products: Product[] = [];
 
     constructor(
         private productService: ProductService,
-        private router: Router
+        private sharedService: SharedService
     ) {}
 
     ngOnInit(): void {
@@ -28,5 +31,9 @@ export class ProductListComponent implements OnInit {
         this.productService.getProductList().subscribe((data) => {
             this.products = data;
         });
+    }
+
+    addToCart(sku: string) {
+        this.sharedService.addItem(sku);
     }
 }

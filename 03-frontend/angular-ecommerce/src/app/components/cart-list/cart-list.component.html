@@ -10,13 +10,15 @@
     </thead>
 
     <tbody>
-        <tr *ngFor="let product of products">
+        <tr *ngFor="let item of cartItems">
             <td class="align-middle">
-                <img src="{{ product.imageUrl }}" height="50" />
+                <img src="{{ item.imageUrl }}" height="50" />
             </td>
-            <td class="align-middle">{{ product.name }}</td>
-            <td class="align-middle">{{ product.unitPrice | currency : "USD" }}</td>
-            <td class="align-middle">{{ product.unitsInStock }}</td>
+            <td class="align-middle">{{ item.name }}</td>
+            <td class="align-middle">
+                {{ item.unitPrice | currency : "USD" }}
+            </td>
+            <td class="align-middle">{{ item.unitsInStock }}</td>
             <td class="align-middle">
                 <button>Remove</button>
             </td>

@@ -19,7 +19,8 @@
             <td class="align-middle">{{ product.unitPrice | currency : "USD" }}</td>
             <td class="align-middle">{{ product.unitsInStock }}</td>
             <td class="align-middle">
-                <button>Add to Cart</button>
+                <!-- uses a combination of <router-outlet> and a shared service to pass data between components -->
+                <button (click)="(addToCart(product.sku))">Add to Cart</button>
             </td>
         </tr>
     </tbody>
