@@ -1,27 +1,34 @@
-<table class="table">
-    <thead class="table-dark">
-        <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Units in Stock</th>
-            <th>Action</th>
-        </tr>
-    </thead>
+<div>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Units in Stock</th>
+                <th>Action</th>
+            </tr>
+        </thead>
 
-    <tbody>
-        <!-- products is a property accessed from ProductListComponent -->
-        <tr *ngFor="let product of products">
-            <td class="align-middle">
-                <img src="{{ product.imageUrl }}" height="50" />
-            </td>
-            <td class="align-middle">{{ product.name }}</td>
-            <td class="align-middle">{{ product.unitPrice | currency : "USD" }}</td>
-            <td class="align-middle">{{ product.unitsInStock }}</td>
-            <td class="align-middle">
-                <!-- uses a combination of <router-outlet> and a shared service to pass data between components -->
-                <button (click)="(addToCart(product.sku))">Add to Cart</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+        <tbody>
+            <!-- products is a property accessed from ProductListComponent -->
+            <tr *ngFor="let product of products">
+                <td class="align-middle">
+                    <img src="{{ product.imageUrl }}" height="50" />
+                </td>
+                <td class="align-middle">{{ product.name }}</td>
+                <td class="align-middle">
+                    {{ product.unitPrice | currency : "USD" }}
+                </td>
+                <td class="align-middle">{{ product.unitsInStock }}</td>
+                <td class="align-middle">
+                    <!-- uses a combination of <router-outlet> and a shared service to pass data between components -->
+                    <button (click)="addToCart(product.sku)">
+                        Add to Cart
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <app-cart-preview></app-cart-preview>
+</div>

@@ -34,6 +34,15 @@ export class ProductListComponent implements OnInit {
     }
 
     addToCart(sku: string) {
+        this.addToCartPreview(sku); // example of using @Input/@Output decorators
+        this.addToCheckout(sku); // example of passing data via <router-outlet> 
+    }
+
+    addToCartPreview(sku: string) {
+        
+    }
+
+    addToCheckout(sku: string) {
         this.sharedService.addItem(sku);
     }
 }
