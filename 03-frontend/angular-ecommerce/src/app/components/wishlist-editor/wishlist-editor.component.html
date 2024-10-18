@@ -1,0 +1,16 @@
+<div class="wishlist-editor">
+    <h2>Add to your Wishlist</h2>
+    <hr />
+    <input [(ngModel)]="wishedItemName" type="text" placeholder="Item name" />
+    <input
+        [(ngModel)]="wishedItemDescription"
+        type="text"
+        placeholder="Item description"
+    />
+    <input
+        [(ngModel)]="wishedItemQuanity"
+        type="number"
+        placeholder="Item quantity"
+    />
+    <button (click)="submitWishlist()">Submit Wish</button>
+</div>

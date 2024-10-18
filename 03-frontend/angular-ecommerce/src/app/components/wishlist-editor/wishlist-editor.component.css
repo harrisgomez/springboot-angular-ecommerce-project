@@ -1,0 +1,14 @@
+.wishlist-editor {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.wishlist-editor input {
+    margin: 4px 0;
+}
+
+.wishlist-editor button {
+    align-self: center;
+    width: 40%;
+}
