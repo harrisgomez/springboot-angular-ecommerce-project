@@ -1,1 +1,12 @@
-<div class="wishlist-display">display</div>
+<div class="wishlist-display">
+    <h2>Wishlist</h2>
+    <hr />
+    <ul *ngFor="let item of wishlistItems">
+        <li>
+            <p>Item name: {{ item.name }}</p>
+            <p>Description: {{ item.description }}</p>
+            <p>Quantity: {{ item.quantity }}</p>
+            <hr />
+        </li>
+    </ul>
+</div>
