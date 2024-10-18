@@ -7,11 +7,9 @@ import { WishlistItem } from '../../common/wishlist-item';
     styleUrl: './wishlist.component.css',
 })
 export class WishlistComponent {
-    receivedWishlistItem: WishlistItem | null = null;
+    receivedWishlistItems: WishlistItem[] = [];
 
     onWishlistSubmitted(item: WishlistItem) {
-        console.log(item);
-        
-        this.receivedWishlistItem = item;
+        this.receivedWishlistItems.push(item);
     }
 }
