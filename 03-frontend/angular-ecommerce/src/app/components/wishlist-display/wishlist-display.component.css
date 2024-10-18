@@ -1,0 +1,11 @@
+.wishlist-display {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.wishlist-display ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
