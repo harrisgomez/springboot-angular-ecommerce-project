@@ -11,14 +11,13 @@ import { Product } from '../../common/product';
     styleUrl: './product-list.component.css',
 })
 export class ProductListComponent implements OnInit {
-
-    // Properties can be accessed from view template
-    products: Product[] = [];
-
     constructor(
         private productService: ProductService,
         private sharedService: SharedService
     ) {}
+
+    // Properties can be accessed from view template
+    products: Product[] = [];
 
     ngOnInit(): void {
         this.listProducts();
