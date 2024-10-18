@@ -8,14 +8,12 @@ import { ProductService } from './services/product.service';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { CartListComponent } from './components/cart-list/cart-list.component';
-import { CartPreviewComponent } from './components/cart-preview/cart-preview.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         ProductListComponent,
         CartListComponent,
-        CartPreviewComponent,
     ],
     imports: [
         BrowserModule,
