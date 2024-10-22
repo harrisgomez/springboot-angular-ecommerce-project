@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 import { Product } from '../common/product';
 
@@ -17,7 +17,14 @@ export class ProductService {
     getProductList(): Observable<Product[]> {
         return this.httpClient
             .get<GetResponse>(this.baseUrl)
-            .pipe(map((response) => response._embedded.products));
+            .pipe(map((response) => response._embedded.products), catchError(this.handleError));
+    }
+
+    private handleError(error: any): Observable<never> {
+        console.error('An error occurred:', error);
+
+        const errorMessage = error.error?.message || 'Unknown error occurred';
+        return throwError(errorMessage);
     }
 }
 
